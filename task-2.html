@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Styled Webpage</title>
+    <style>
+        /* ===== Part B: CSS3 Styling ===== */
+
+        .site-header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            /* Gradient background */
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 30px;
+            text-align: center;
+            padding: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            /* Text shadow */
+        }
+
+        .site-header p {
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+
+        .navbar {
+            background-color: #222;
+            text-align: center;
+            padding: 14px;
+        }
+
+        .navbar a {
+            color: #f4f4f4;
+            margin: 0 18px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: #ff6600;
+            /* Hover effect on nav links */
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 14px;
+            /* Rounded corners */
+            padding: 22px;
+            width: 200px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+            /* Box shadow */
+            text-align: center;
+            font-family: Georgia, serif;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            /* Card lifts on hover */
+        }
+
+        .card h3 {
+            font-size: 19px;
+            color: #4facfe;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card button {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #4facfe;
+            color: white;
+            cursor: pointer;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .card button:hover {
+            background-color: #0077cc;
+            /* Hover effect on button */
+        }
+
+        .site-footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .canvas-section {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 15px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Part A: HTML5 Canvas ===== -->
+    <div class="canvas-section">
+        <h2 class="section-title">Canvas Graphics</h2>
+        <p style="font-family: Arial, sans-serif; color:#666;">
+            A simple rectangle, circle, line, and my name drawn using JavaScript on the HTML5 canvas.
+        </p>
+        <canvas id="myCanvas" width="400" height="250"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d"); // 2D drawing context
+
+        ctx.fillStyle = "skyblue";
+        ctx.fillRect(20, 20, 100, 60); // Rectangle
+
+        ctx.beginPath();
+        ctx.arc(220, 60, 40, 0, Math.PI * 2); // Circle
+        ctx.fillStyle = "orange";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(20, 150);
+        ctx.lineTo(300, 150); // Line
+        ctx.stroke();
+
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Saranya", 20, 200); // Name as text
+    </script>
+
+    <!-- ===== Part B: CSS3 Styled Webpage Layout ===== -->
+    <header class="site-header">
+        <h1>My Styled Webpage</h1>
+        <p>Showcasing CSS3 styling with gradients, shadows, and hover effects</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h2 class="section-title">What I Bring</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>About Me</h3>
+            <p>A student learning web design, currently exploring HTML5, CSS3, and JavaScript basics.</p>
+            <button>Read More</button>
+        </div>
+        <div class="card">
+            <h3>My Skills</h3>
+            <p>Building structured layouts, styling with CSS3, and adding simple canvas graphics.</p>
+            <button>View Skills</button>
+        </div>
+        <div class="card">
+            <h3>Get in Touch</h3>
+            <p>Open to feedback and collaboration on small web development projects.</p>
+            <button>Contact Me</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 My Styled Webpage | Designed and Coded by Saranya</p>
+    </footer>
+
+</body>
+
+</html>
