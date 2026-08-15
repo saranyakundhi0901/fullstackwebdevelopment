@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Page heading -->
+        <header>
+            <h1>📝 My To-Do List</h1>
+            <p>Organize your tasks and stay productive</p>
+        </header>
+
+        <!-- Section for entering a new task -->
+        <div class="task-input">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task..."
+            >
+
+            <button id="addTaskBtn">
+                Add Task
+            </button>
+
+        </div>
+
+        <!-- Tasks will be added dynamically here -->
+        <div id="taskList"></div>
+
+        <!-- Message shown when there are no tasks -->
+        <p id="emptyMessage">
+            No tasks available.
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
