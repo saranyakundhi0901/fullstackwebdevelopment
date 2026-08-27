@@ -1,3 +1,4 @@
+//os module
 const os = require('os');
 
 
@@ -6,7 +7,7 @@ console.log(`CPU Architecture: ${os.arch()}`); // e.g., 'x64'
 console.log(`Total Memory: ${os.totalmem()} bytes`);
 console.log(`Free Memory: ${os.freemem()} bytes`);
 console.log(`Current User Info:`, os.userInfo());
-
+//path module
 const path = require('path');
 
 
@@ -29,7 +30,7 @@ console.log(`File Extension: ${path.extname(filePath)}`); // .txt
 const newPath = path.join(__dirname, 'data', 'config.json');
 console.log(`Joined Path: ${newPath}`); // C:\path\to\your\app\data\config.json
 
-
+//dns module
 const dns = require('dns');
 // Resolve a domain name to an array of IP addresses
 dns.lookup('google.com', (err, address, family) => {
@@ -44,6 +45,8 @@ dns.resolve4('google.com', (err, addresses) => {
   if (err) throw err;
   console.log(`All IPv4 addresses for google.com:`, addresses);
 });
+
+//net module
 const net = require('net');
 
 
