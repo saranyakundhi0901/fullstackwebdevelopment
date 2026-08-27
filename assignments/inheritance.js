@@ -1,11 +1,8 @@
-// ======================================================
-//           TYPES OF INHERITANCE IN JAVASCRIPT
-// ======================================================
 
+//TYPES OF INHERITANCE IN JAVASCRIPT
 
-// ======================================================
 // 1. SINGLE INHERITANCE
-// ======================================================
+
 
 // Parent class
 class Animal {
@@ -14,8 +11,7 @@ class Animal {
     }
 }
 
-// Dog inherits from Animal
-// This is SINGLE INHERITANCE
+
 class Dog extends Animal {
     bark() {
         console.log("Dog can bark");
@@ -26,14 +22,14 @@ console.log("----- 1. Single Inheritance -----");
 
 let dog = new Dog();
 
-dog.eat();      // Parent class method
-dog.bark();     // Child class method
+dog.eat();      
+dog.bark();     
 
 
 
-// ======================================================
+
 // 2. MULTILEVEL INHERITANCE
-// ======================================================
+
 
 // Grandparent class
 class LivingThing {
@@ -49,9 +45,7 @@ class Animal2 extends LivingThing {
     }
 }
 
-// Dog2 inherits Animal2
-// LivingThing -> Animal2 -> Dog2
-// This is MULTILEVEL INHERITANCE
+
 class Dog2 extends Animal2 {
     bark() {
         console.log("Dog can bark");
@@ -62,15 +56,15 @@ console.log("\n----- 2. Multilevel Inheritance -----");
 
 let dog2 = new Dog2();
 
-dog2.breathe();     // LivingThing method
-dog2.walk();        // Animal2 method
-dog2.bark();        // Dog2 method
+dog2.breathe();     
+dog2.walk();        
+dog2.bark();       
 
 
 
-// ======================================================
+
 // 3. HIERARCHICAL INHERITANCE
-// ======================================================
+
 
 // Parent class
 class Vehicle {
@@ -86,9 +80,7 @@ class Car extends Vehicle {
     }
 }
 
-// Bike also inherits Vehicle
-// One parent -> multiple child classes
-// This is HIERARCHICAL INHERITANCE
+
 class Bike extends Vehicle {
     ride() {
         console.log("Bike is riding");
@@ -99,29 +91,19 @@ console.log("\n----- 3. Hierarchical Inheritance -----");
 
 let car = new Car();
 
-car.start();        // Vehicle method
-car.drive();        // Car method
+car.start();        
+car.drive();        
 
 let bike = new Bike();
 
-bike.start();       // Vehicle method
-bike.ride();        // Bike method
+bike.start();       
+bike.ride();        
 
 
 
-// ======================================================
+
 // 4. MULTIPLE INHERITANCE
-// ======================================================
 
-// JavaScript does NOT directly support
-// multiple inheritance using multiple "extends".
-//
-// Example of NOT allowed syntax:
-//
-// class Child extends Father, Mother {
-// }
-//
-// Instead, JavaScript can achieve this using MIXINS.
 
 // First parent class
 class Father {
@@ -167,21 +149,14 @@ console.log("\n----- 4. Multiple Inheritance -----");
 
 let child = new Child();
 
-child.fatherProperty();     // Father method
-child.motherProperty();     // Mother method
-child.childProperty();      // Child method
+child.fatherProperty();     
+child.motherProperty();     
+child.childProperty();      
 
 
 
-// ======================================================
 // 5. HYBRID INHERITANCE
-// ======================================================
 
-// Hybrid inheritance is a combination of
-// two or more types of inheritance.
-//
-// JavaScript does NOT directly support hybrid inheritance.
-// We can achieve it using class inheritance + mixins.
 
 // Parent class
 class Person {
@@ -205,9 +180,7 @@ class Sports {
     }
 }
 
-// CollegeStudent inherits Student
-// Person -> Student -> CollegeStudent
-// This is MULTILEVEL inheritance.
+
 class CollegeStudent extends Student {
     attendCollege() {
         console.log("Student attends college");
@@ -227,7 +200,7 @@ console.log("\n----- 5. Hybrid Inheritance -----");
 
 let student = new CollegeStudent();
 
-student.introduce();        // Person method
-student.study();            // Student method
-student.attendCollege();   // CollegeStudent method
-student.play();             // Sports method using Mixin
+student.introduce();        
+student.study();            
+student.attendCollege();   
+student.play();             
