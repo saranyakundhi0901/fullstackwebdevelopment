@@ -1,25 +1,34 @@
-// Class
-class Student {
+class Bank {
 
-    // Private fields
-    #name;
-    #marks;
+    #balance;
 
-    // Constructor
-    constructor(name, marks) {
-        this.#name = name;
-        this.#marks = marks;
+    constructor(balance) {
+        this.#balance = balance;
     }
 
-    // Public method to display data
-    display() {
-        console.log("Student Name:", this.#name);
-        console.log("Student Marks:", this.#marks);
+    get balance() {
+        return this.#balance;
+    }
+
+    deposit(amount) {
+        if (amount > 0) {
+            this.#balance += amount;
+        }
+    }
+
+    withdraw(amount) {
+        if (amount <= this.#balance) {
+            this.#balance -= amount;
+        } else {
+            console.log("Insufficient Balance");
+        }
     }
 }
 
-// Creating Object
-let s1 = new Student("Saranya", 95);
+let account = new Bank(10000);
 
-// Calling Method
-s1.display();
+account.deposit(5000);
+
+account.withdraw(3000);
+
+console.log("Balance:", account.balance);
