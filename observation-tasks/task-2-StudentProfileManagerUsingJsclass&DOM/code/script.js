@@ -1,16 +1,7 @@
-/*
- * Student Profile Manager
- *
- * This program demonstrates:
- * 1. JavaScript Classes
- * 2. Objects
- * 3. DOM Selection
- * 4. Dynamic HTML Element Creation
- * 5. Event Handling
- */
+
 
 // Creating a Student class
-// The class acts as a blueprint for creating student objects.
+
 class Student {
 
     // Constructor initializes the properties of a student
