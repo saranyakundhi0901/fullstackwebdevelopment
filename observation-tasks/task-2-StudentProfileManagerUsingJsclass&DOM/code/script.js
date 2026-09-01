@@ -1,5 +1,4 @@
 
-
 // Creating a Student class
 
 class Student {
@@ -27,10 +26,7 @@ const profileContainer = document.getElementById("profileContainer");
 // Adding a click event to the Create Profile button
 createButton.addEventListener("click", function () {
 
-    /*
-     * Get the values entered by the user.
-     * trim() removes unnecessary spaces from the beginning and end.
-     */
+    
     const name = nameInput.value.trim();
     const rollNumber = rollInput.value.trim();
     const department = departmentInput.value.trim();
@@ -46,10 +42,7 @@ createButton.addEventListener("click", function () {
     }
 
 
-    /*
-     * Creating an object of the Student class.
-     * The user-provided values are passed to the constructor.
-     */
+   
     const student = new Student(
         name,
         rollNumber,
@@ -58,17 +51,11 @@ createButton.addEventListener("click", function () {
     );
 
 
-    /*
-     * Clear the previous profile before displaying
-     * the newly created student profile.
-     */
+     
     profileContainer.innerHTML = "";
 
 
-    /*
-     * Dynamically creating HTML elements using JavaScript.
-     * No profile HTML is hard-coded inside the container.
-     */
+    
     const profileCard = document.createElement("div");
     profileCard.className = "profile-card";
 
@@ -95,10 +82,7 @@ createButton.addEventListener("click", function () {
     profileDetails.className = "profile-details";
 
 
-    /*
-     * Function to create each student detail row.
-     * This avoids repeating the same DOM code multiple times.
-     */
+    
     function createDetail(labelText, valueText, extraClass = "") {
 
         const detail = document.createElement("div");
@@ -119,10 +103,7 @@ createButton.addEventListener("click", function () {
     }
 
 
-    /*
-     * Adding the student's information dynamically
-     * using values stored inside the Student object.
-     */
+    
     profileDetails.appendChild(
         createDetail("Name", student.name)
     );
@@ -140,10 +121,7 @@ createButton.addEventListener("click", function () {
     );
 
 
-    /*
-     * Combining all dynamically created elements
-     * to form the complete student profile.
-     */
+    
     profileCard.appendChild(profileHeader);
     profileCard.appendChild(profileDetails);
 

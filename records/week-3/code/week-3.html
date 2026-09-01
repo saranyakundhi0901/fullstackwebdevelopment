@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge Studio</title>
+    <link rel="stylesheet" href="week-3.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header id="site-header">
+        <nav>
+            <div class="logo">PixelForge</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <h1>Ideas Deserve Great Design</h1>
+        <p>PixelForge Studio turns rough concepts into polished digital products — websites, apps, and brands that
+            people remember.</p>
+        <a href="#contact" class="btn">Start a Project</a>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about" id="about">
+        <h2>Who We Are</h2>
+        <p>PixelForge Studio is a small, focused creative team that partners with startups and growing businesses to
+            design and build products worth using. We obsess over the details — layout, motion, speed, and clarity — so
+            your users never have to think twice.</p>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services" id="services">
+        <h2>What We Do</h2>
+        <div class="service-cards">
+            <div class="card">
+                <div class="card-icon">🖌️</div>
+                <h3>Brand & UI Design</h3>
+                <p>Distinct visual identities and interfaces that reflect who you are, not a generic template.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Web & App Development</h3>
+                <p>Fast, reliable builds using clean code — from landing pages to full product dashboards.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Growth & Optimization</h3>
+                <p>SEO-friendly structure, performance tuning, and conversion-focused layouts that actually convert.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="testimonials" id="testimonials">
+        <h2>Client Stories</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p class="quote">"PixelForge rebuilt our entire product page and bookings jumped almost immediately.
+                    They actually listen."</p>
+                <p class="author">— Priya Nair, Founder, Trailmate</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Clear communication, sharp design instincts, and they delivered ahead of schedule.
+                    Rare combination."</p>
+                <p class="author">— Karthik Iyer, CoreStack</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Our site finally feels like it belongs to a real brand. Every screen size looks
+                    intentional now."</p>
+                <p class="author">— Meera Das, Lumen Retail</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <section class="contact" id="contact">
+        <h2>Let's Talk</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."
+                required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 PixelForge Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sticky header shadow on scroll
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Fade-in on scroll for sections and cards
+        const revealItems = document.querySelectorAll('.card, .testimonial-card, .about, .contact');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealItems.forEach(item => {
+            item.classList.add('reveal');
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>
