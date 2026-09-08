@@ -1,13 +1,9 @@
-/**
- * JavaScript Core Concepts Demonstration
- * Topics: Functions, Arrow Functions, Anonymous Functions, Callback Functions, Promises
- * Each topic compares WITHOUT vs WITH the concept, so the difference is clear.
- */
 
-console.log("========================================");
+
+
 console.log("TOPIC 1: FUNCTIONS");
 console.log("A function lets us write logic once and reuse it many times.");
-console.log("========================================");
+
 
 // WITHOUT function -> logic is written directly, cannot be reused
 console.log("[Without Function] Direct result:", 5 + 3);
@@ -20,10 +16,10 @@ console.log("[With Function] add(5, 3) =", add(5, 3));
 console.log("[With Function] add(10, 20) =", add(10, 20));
 
 
-console.log("\n========================================");
+
 console.log("TOPIC 2: ARROW FUNCTIONS");
 console.log("Arrow functions are a shorter way to write normal functions.");
-console.log("========================================");
+
 
 // WITHOUT arrow function -> normal function syntax (longer)
 function multiplyNormal(a, b) {
@@ -37,10 +33,9 @@ console.log("[Arrow Function] multiplyArrow(4, 5) =", multiplyArrow(4, 5));
 // Both give the SAME output 20 -> only the way of writing changed
 
 
-console.log("\n========================================");
 console.log("TOPIC 3: ANONYMOUS FUNCTIONS");
 console.log("A function with no name, usually stored in a variable or passed directly.");
-console.log("========================================");
+
 
 // WITHOUT anonymous function -> needs a separate named function every time
 function greetNamed() {
@@ -55,10 +50,10 @@ const greetAnonymous = function () {
 greetAnonymous();
 
 
-console.log("\n========================================");
+
 console.log("TOPIC 4: CALLBACK FUNCTIONS");
 console.log("A function passed as an argument, which runs AFTER another function finishes.");
-console.log("========================================");
+
 
 // WITHOUT callback -> function does its task, we cannot add extra action after it
 function processData(data) {
@@ -81,10 +76,10 @@ processDataWithCallback("Attendance Data", (result) => {
 });
 
 
-console.log("\n========================================");
+
 console.log("TOPIC 5: PROMISES");
 console.log("A Promise represents a future result of an async task: success or failure.");
-console.log("========================================");
+
 
 // WITHOUT promise -> only callback used, gets messy for multiple async steps (callback hell)
 function fetchDataCallback(callback) {
@@ -115,5 +110,3 @@ fetchDataPromise()
     .then((result) => console.log(result))   // runs only if resolve() was called
     .catch((error) => console.log(error));   // runs only if reject() was called
 
-// Note: setTimeout/Promise outputs appear LAST because they are asynchronous
-// (they wait for their timer, while the rest of the code runs immediately)
