@@ -1,117 +1,148 @@
 // 1. SINGLE INHERITANCE
 console.log("Single Inheritance");
-class Vehicle {
-    start() {
-        console.log("Vehicle is starting.");
+
+class User {
+    login() {
+        console.log("User is logging in.");
     }
 }
-class Car extends Vehicle {
-    drive() {
-        console.log("Car is driving.");
+
+class Customer extends User {
+    buyProduct() {
+        console.log("Customer is buying a product.");
     }
 }
-let car = new Car();
-car.start();
-car.drive();
+
+let customer = new Customer();
+customer.login();
+customer.buyProduct();
+
 
 // 2. MULTILEVEL INHERITANCE
 console.log("\nMultilevel Inheritance");
-class Vehicle2 {
-    start() {
-        console.log("Vehicle is starting.");
+
+class User2 {
+    login() {
+        console.log("User is logging in.");
     }
 }
-class Car2 extends Vehicle2 {
-    drive() {
-        console.log("Car is driving.");
+
+class Customer2 extends User2 {
+    buyProduct() {
+        console.log("Customer is buying a product.");
     }
 }
-class SportsCar extends Car2 {
-    boost() {
-        console.log("SportsCar is boosting speed.");
+
+class PremiumCustomer extends Customer2 {
+    getDiscount() {
+        console.log("Premium customer gets a discount.");
     }
 }
-let sportsCar = new SportsCar();
-sportsCar.start();
-sportsCar.drive();
-sportsCar.boost();
+
+let premiumCustomer = new PremiumCustomer();
+premiumCustomer.login();
+premiumCustomer.buyProduct();
+premiumCustomer.getDiscount();
+
 
 // 3. HIERARCHICAL INHERITANCE
 console.log("\nHierarchical Inheritance");
-class Vehicle3 {
-    start() {
-        console.log("Vehicle is starting.");
+
+class User3 {
+    login() {
+        console.log("User is logging in.");
     }
 }
-class Car3 extends Vehicle3 {
-    drive() {
-        console.log("Car is driving.");
+
+class Customer3 extends User3 {
+    buyProduct() {
+        console.log("Customer is buying a product.");
     }
 }
-class Bike extends Vehicle3 {
-    pedal() {
-        console.log("Bike is pedaling.");
+
+class Admin extends User3 {
+    manageUsers() {
+        console.log("Admin is managing users.");
     }
 }
-let car3 = new Car3();
-let bike = new Bike();
-car3.start();
-car3.drive();
-bike.start();
-bike.pedal();
+
+let customer3 = new Customer3();
+let admin = new Admin();
+
+customer3.login();
+customer3.buyProduct();
+
+admin.login();
+admin.manageUsers();
+
 
 // 4. MULTIPLE INHERITANCE
 // Using Mixins
 console.log("\nMultiple Inheritance");
-const GPSEnabled = {
-    locate() {
-        console.log("Locating position via GPS.");
+
+const Login = {
+    login() {
+        console.log("Employee is logging in.");
     }
 };
-const Bluetooth = {
-    connect() {
-        console.log("Connecting via Bluetooth.");
+
+const Payment = {
+    makePayment() {
+        console.log("Employee is making payment.");
     }
 };
-class SmartCar {
-    honk() {
-        console.log("SmartCar is honking.");
+
+class Employee {
+    work() {
+        console.log("Employee is working.");
     }
 }
-// Add both GPSEnabled and Bluetooth features
-Object.assign(SmartCar.prototype, GPSEnabled, Bluetooth);
-let smartCar = new SmartCar();
-smartCar.honk();
-smartCar.locate();
-smartCar.connect();
+
+// Add both Login and Payment features
+Object.assign(Employee.prototype, Login, Payment);
+
+let employee = new Employee();
+employee.work();
+employee.login();
+employee.makePayment();
+
 
 // 5. HYBRID INHERITANCE
 console.log("\nHybrid Inheritance");
-class Vehicle4 {
-    start() {
-        console.log("Vehicle is starting.");
+
+class User4 {
+    login() {
+        console.log("User is logging in.");
     }
 }
-class Car4 extends Vehicle4 {
-    drive() {
-        console.log("Car is driving.");
+
+class Customer4 extends User4 {
+    buyProduct() {
+        console.log("Customer is buying a product.");
     }
 }
-class Bike4 extends Vehicle4 {
-    pedal() {
-        console.log("Bike is pedaling.");
+
+class Admin4 extends User4 {
+    manageUsers() {
+        console.log("Admin is managing users.");
     }
 }
-const Turbo = {
-    boost() {
-        console.log("Turbo boost activated.");
+
+const Notification = {
+    sendNotification() {
+        console.log("Notification sent.");
     }
 };
-Object.assign(Car4.prototype, Turbo);
-let car4 = new Car4();
-let bike4 = new Bike4();
-car4.start();
-car4.drive();
-car4.boost();
-bike4.start();
-bike4.pedal();
+
+// Add Notification feature to Customer
+Object.assign(Customer4.prototype, Notification);
+
+let customer4 = new Customer4();
+let admin4 = new Admin4();
+
+customer4.login();
+customer4.buyProduct();
+customer4.sendNotification();
+
+admin4.login();
+admin4.manageUsers();
