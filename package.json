@@ -1,0 +1,24 @@
+{
+  "name": "fullstackwebdevelopment",
+  "version": "1.0.0",
+  "description": "* **Student Name:** K.Saranya\r * **Roll Number:** A24126552090\r * **Department:** Computer Science & Engineering (AI & ML)\r * **Academic Year:** 2026-2027",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saranyakundhi0901/fullstackwebdevelopment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/saranyakundhi0901/fullstackwebdevelopment/issues"
+  },
+  "homepage": "https://github.com/saranyakundhi0901/fullstackwebdevelopment#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
