@@ -2,7 +2,7 @@
 
 
 const readline = require("readline");
-const fileOps = require("./fileoperations");
+const fileOps = require("../fileoperations");
 
 const rl = readline.createInterface({
   input: process.stdin,
