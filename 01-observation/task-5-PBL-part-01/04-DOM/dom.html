@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Demo</title>
+</head>
+
+<body>
+
+    <h1 id="title">Static Heading</h1>
+
+    <p id="description">
+        This paragraph has not been touched by JavaScript yet.
+    </p>
+
+    <button id="updateBtn">
+        Update Page
+    </button>
+
+    <script>
+        const title = document.getElementById("title");
+        const description = document.getElementById("description");
+        const updateBtn = document.getElementById("updateBtn");
+
+        updateBtn.addEventListener("click", function () {
+
+            // Change content
+            title.textContent = "Heading Updated Successfully";
+
+            description.textContent =
+                "JavaScript just changed this text using the DOM.";
+
+            // Change style
+            title.style.color = "white";
+            title.style.backgroundColor = "teal";
+            title.style.padding = "12px";
+            title.style.borderRadius = "6px";
+
+            // Change an attribute
+            title.setAttribute("title", "Heading text updated via JavaScript");
+        });
+    </script>
+
+</body>
+</html>
